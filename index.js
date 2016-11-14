@@ -1,7 +1,8 @@
 ;
 
 +
-{ id: 'animated.logo@jsonxd.net',
+{ id: "ale@ions.iskitz.net",
+  is: "animated literal-ion emoji",
   by: "Mike Lee, @iskitz",
 
   faces:
@@ -66,7 +67,6 @@
     function jsonXDLogo () {
        this.go();
     }
-}//animated.logo@jsonxd.net
-
+} //+ale@ions.iskitz.net
 
 ;
