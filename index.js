@@ -1,13 +1,13 @@
 ;
 
 +
-{ id: "ale@ions.iskitz.net",
-  is: "animated literal-ion emoji",
-  by: "Mike Lee, @iskitz",
-
+{ id: "anemojii@ions.iskitz.net"
+, is: "animated emoji ions"
+, by: "Mike Lee, @iskitz"
+, at: "2016.11.16-08...2015.07.12-07"
+,
   faces:
-    [ "+{'-':'-'};"/*
-    , "+{'_':'_'};"*/
+    [ "+{'-':'-'};"
     , "+{'•':'•'};"
     , "+{'ö':'ö'};"
     , "+{'*':'*'};"
@@ -41,32 +41,35 @@
     , "+['# . #'];"
     , "+{'^':'^'};"
     , "+['^ . ^'];"
+    , "/d(~ . ~)b/"
+    , '["]\'• ؈ •\'["]'
+    , "['~ ؈ ~']"
     ],
 
   view: document,
 
   go:
-    function go () {
-       !go.view  && (go.view  = this.view);
-       !go.faces && (go.faces = this.faces);
+    function go ()
+      { !go.view  && (go.view  = this.view);
+        !go.faces && (go.faces = this.faces);
 
-       var faces = go.faces
-         , index = Math.random() * faces.length
-         , view  = go.view
-         ;
+        var faces = go.faces
+          , index = Math.random() * faces.length
+          , view  = go.view
+          ;
 
-       index      = Math.floor(index);
-       view.title = view.body.innerHTML = faces [index];
-       var runs   = go.count ? go.count++ : (go.count = 1);
-       var wait   = Math.random() * 1500;
+        index      = Math.floor (index);
+        view.title = view.body.innerHTML = faces [index];
+        var runs   = go.count ? go.count++ : (go.count = 1);
+        var wait   = Math.random() * 1500;
 
-       (runs < 2015) && setTimeout (go, wait);
-    }, //go()
+        (runs < 2015) && setTimeout (go, wait);
+      }, //go()
 
   valueOf:
-    function jsonXDLogo () {
-       this.go();
-    }
-} //+ale@ions.iskitz.net
+    function anemojii ()
+      { this.go()
+      }
+} //+anemojii@ions.iskitz.net
 
 ;
