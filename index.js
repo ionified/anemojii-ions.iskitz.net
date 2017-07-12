@@ -1,23 +1,49 @@
 ;
+~
+{ re:
+    { id: "anemojii.3.0@ions.iskitz.net"
+    , is: "animated emoji ions"
 
-+
-{ id: "anemojii@ions.iskitz.net"
-, is: "animated emoji ions"
-, by: "Mike Lee, @iskitz"
-, at: "2016.11.16-08...2015.07.12-07"
-,
-  faces:
+    , by: "mike.lee@iskitz"
+    , at: "2017.07.11-07...2015"
+
+    , it: "Also demonstrates ionified literate programming."
+    , im: "Exploring ion API & runtime documentation syntax via"
+        + " ~I: do documentation once; only 1st time."
+        + " ~i: do documentation every time."
+    }
+
+, do:
+    [ "choose a random face from the faces list"
+    , "show that face"
+    , "repeat 2014 times waiting <= 1.5 seconds each time"
+    ]
+
+, faces:
     [ "+{'-':'-'};"
+    , "+['- : -'];"
+    , "+['- . -'];"
     , "+{'•':'•'};"
+    , "+['• : •'];"
+    , "+['• . •'];"
     , "+{'ö':'ö'};"
+    , "+['ö : ö'];"
+    , "+['ö . ö'];"
     , "+{'*':'*'};"
+    , "+['* : *'];"
+    , "+['* . *'];"
     , "+{'o':'o'};"
+    , "+['o : o'];"
+    , "+['o . o'];"
     , "+{'O':'O'};"
+    , "+['O : O'];"
+    , "+['O . O'];"
     , "+[‘• . •’];"
     , "+[‘• ؈ •’];"
     , "+[‘0 . 0’];"
-    , "+{'0':'0'};"
     , "+{ 0 : 0 };"
+    , "+{'0':'0'};"
+    , "+['0 : 0'];"
     , "+{'õ':'õ'};"
     , "+['õ . õ'];"
     , "+{'ō':'ō'};"
@@ -28,48 +54,65 @@
     , "+{'ó':'ò'};"
     , "+{'ò':'ó'};"
     , "+['ò . ó'];"
-    , "+['` . `'};"
     , " +[' . ']; "
     , "+['— ؈ —'];"
     , "+{'~':'~'};"
     , "+['~ . ~'];"
     , "+{'+':'+'};"
     , "+['+ . +'];"
-    , "+{'¢':'¢'};"
-    , "+['¢ . ¢'];"
-    , "+{'#':'#'};"
-    , "+['# . #'];"
-    , "+{'^':'^'};"
     , "+['^ . ^'];"
-    , "/d(~ . ~)b/"
-    , '["]\'• ؈ •\'["]'
-    , "['~ ؈ ~']"
-    ],
+    , "+{'^':'^'};"
+    , "+['๑˃̵ᴗ˂̵'];"
+    , "+[' ͡° ʖ ͡°'];"
+    , "+[' ͡° ͜ʖ ͡°'];"
+    , "+/d(~ . ~)b/;"
+    , "+/d(• . •)b/;"
+    , "+/d(- . -)b/;"
+    , '+["]\'• ؈ •\'["];'
+    , "+['~ ؈ ~'];"
+    ]
 
-  view: document,
+, "choose a random face from the faces list":
+    function chooseFace ()
+      { ~ {I
+          :"Choose a face from the faces list by first generating a random"
+          +" number between 0 and the list's length. Next I use that number"
+          +" number to select the face at the matching position within the"
+          +" list. Lastly, I save the chosen face as a property on the faces"
+          +" list."
+          }
 
-  go:
-    function go ()
-      { !go.view  && (go.view  = this.view);
-        !go.faces && (go.faces = this.faces);
+        var faces       = chooseFace.ion.faces
+          , choice      = Math.random * faces.length
+          ; choice      = Math.floor (choice)
+          ; faces.next  = faces      [choice]
 
-        var faces = go.faces
-          , index = Math.random() * faces.length
-          , view  = go.view
-          ;
-
-        index      = Math.floor (index);
-        view.title = view.body.innerHTML = faces [index];
-        var runs   = go.count ? go.count++ : (go.count = 1);
-        var wait   = Math.random() * 1500;
-
-        (runs < 2015) && setTimeout (go, wait);
-      }, //go()
-
-  valueOf:
-    function anemojii ()
-      { this.go()
+        ~ {i:"Chose "+ faces.next +" using random number "+ choice}
       }
-} //+anemojii@ions.iskitz.net
 
+, "show that face":
+    function showFace ()
+      { ~ {I
+          :"Show the chosen face by setting it as my web view's title and"
+          +" content."
+          }
+        document.title = document.body.innerHTML = showFace.ion.faces.next
+      }
+
+, "repeat 2014 times waiting <= 1.5 seconds each time":
+    function repeat ()
+      { ~ {I
+          :"Repeat this ion's do actions 2014 times waiting up to 1.5 seconds"
+          +" each time. I remove the repeat action on the second repeat to"
+          +" avoid doing all actions immediately *and* after a delay."
+          }
+
+        ++repeat.times < 2015
+          ?   setTimeout (repeat, Math.random * 1500)
+          &&  repeat.times == 2 && repeat.ion.do.pop()
+          :  (repeat.times  = 1)
+
+        ~ repeat.ion.do
+      }
+}
 ;
