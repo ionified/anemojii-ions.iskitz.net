@@ -5,7 +5,7 @@
     , is: "animated emoji ions"
 
     , by: "mike.lee@iskitz"
-    , at: "2017.07.11-07...2015"
+    , at: "2017.07.12-07...2015"
 
     , it: "Also demonstrates ionified literate programming."
     , im: "Exploring ion API & runtime documentation syntax via"
