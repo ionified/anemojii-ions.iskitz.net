@@ -5,9 +5,10 @@
     , is: "animated emoji ions"
 
     , by: "mike.lee@iskitz"
-    , at: "2017.07.12-07...2015"
+    , at: "2017.07.13-07...2015"
 
-    , it: "Also demonstrates ionified literate programming."
+    , it: "Shows emoji faces that're all valid ions. It also demonstrates"
+        + " ionified literate programming in the way it's written."
 
     , im: "Exploring ion API & runtime documentation syntax via"
         + " ~I: do documentation once; only 1st time."
@@ -84,7 +85,7 @@
           +" number between 0 and the list's length. Next I use that number"
           +" to select the face at the matching position within the list."
           +" Lastly, I save the chosen face as a property on the faces list to"
-          +" simplify accessing it via this ion's other do actions."
+          +" simplify accessing it from other actions."
           }
 
         var faces       = chooseFace.ion.faces
