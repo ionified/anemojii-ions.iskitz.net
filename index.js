@@ -5,18 +5,19 @@
     , is: "animated emoji ions"
 
     , by: "mike.lee@iskitz"
-    , at: "2017.07.13-07...2015"
+    , at: "2017.12.28-08...2015"
 
-    , it: "Shows emoji faces that're all valid ions. It also demonstrates"
-        + " ionified literate programming in the way it's written."
+    , it: /Shows emoji faces that're all valid ions. It also explores/
+        + /ionified literate programming.                            /
 
-    , im: "Exploring ion API & runtime documentation syntax via"
-        + " ~I: do documentation once; only 1st time."
-        + " ~i: do documentation every time."
+    , im: /Exploring ion API & runtime documentation syntax via/
+        + / ~I: do documentation once; only 1st time.          /
+        + / ~i: do documentation every time.                   /
 
-        + "I'd also, at some point, like to update this to generate faces based"
-        + " on preset eyes, noses, mouths & head accessories like earphones:"
-              +/(d~ . ~b)/
+        + /I'd also, at some point, like to update this to generate faces based/
+        + / on preset eyes, noses, mouths & head accessories like earphones:   /
+        
+        +   /d(~ . ~)b/
     }
 
 , do:
