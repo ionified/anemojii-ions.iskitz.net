@@ -5,17 +5,17 @@
     , is: "animated emoji ions"
 
     , by: "mike.lee@iskitz"
-    , at: "2017.12.28-08...2015"
+    , at: "2018.01.04-08...2015"
 
-    , it: /Shows emoji faces that're all valid ions. It also explores/
-        + /ionified literate programming.                            /
+    , it: "Shows emoji faces that're all valid ions. It also explores"
+        + "ionified literate programming.                            "
 
-    , im: /Exploring ion API & runtime documentation syntax via/
-        + / ~I: do documentation once; only 1st time.          /
-        + / ~i: do documentation every time.                   /
+    , im: "Exploring ion API & runtime documentation syntax via"
+        + " ~I: do documentation once; only 1st time.          "
+        + " ~i: do documentation every time.                   "
 
-        + /I'd also, at some point, like to update this to generate faces based/
-        + / on preset eyes, noses, mouths & head accessories like earphones:   /
+        + "I'd also, at some point, like to update this to generate faces based"
+        + " on preset eyes, noses, mouths & head accessories like earphones:   "
         
         +   /d(~ . ~)b/
     }
@@ -26,8 +26,8 @@
     , "repeat 2014 times waiting <= 1.5 seconds each time"
     ]
 
-, faces:
-    [ "+{'-':'-'};"
+, faces
+:   [ "+{'-':'-'};"
     , "+['- : -'];"
     , "+['- . -'];"
     , "+{'•':'•'};"
@@ -79,8 +79,8 @@
     , "+['~ ؈ ~'];"
     ]
 
-, "choose a random face from the faces list":
-    function chooseFace ()
+, "choose a random face from the faces list"
+:   function chooseFace ()
       { ~ {I
           :" choose a face from the faces list by first generating a random"
           +" number between 0 and the list's length. Next I use that number"
@@ -97,8 +97,8 @@
         ~ {i:"chose "+ faces.next +" using random number "+ choice}
       }
 
-, "show that face":
-    function showFace ()
+, "show that face"
+:   function showFace ()
       { ~ {I
           :" show the chosen face by setting it as my web view's title and"
           +" content."
@@ -106,8 +106,8 @@
         document.title = document.body.innerHTML = showFace.ion.faces.next
       }
 
-, "repeat 2014 times waiting <= 1.5 seconds each time":
-    function repeat ()
+, "repeat 2014 times waiting <= 1.5 seconds each time"
+:   function repeat ()
       { ~ {I
           :" repeat this ion's do actions 2014 times waiting up to 1.5 seconds"
           +" each time. I remove the repeat action on the second repeat to"
