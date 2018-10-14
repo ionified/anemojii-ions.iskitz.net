@@ -23,7 +23,8 @@
 , do:
     [ "choose a random face from the faces list"
     , "show that face"
-    , "repeat 2014 times waiting .5 —> 1.5 seconds each time"
+    , "wait .5 --> 1.5 seconds"
+    , "repeat 2014 times"
     ]
 
 , faces
@@ -107,7 +108,12 @@
         document.title = document.body.innerHTML = showFace.ion.faces.next
       }
 
-, "repeat 2014 times waiting .5 —> 1.5 seconds each time"
+, "wait .5 --> 1.5 seconds"
+:   function wait ()
+      { wait.ion.do.after = Math.random * 1000 + 500
+      }
+
+, "repeat 2014 times"
 :   function repeat ()
       { ~ {I
           :" repeat this ion's do actions 2014 times waiting up to 1.5 seconds"
@@ -116,8 +122,8 @@
           }
 
         ++repeat.times < 2015
-          ?   setTimeout (repeat, Math.random * 1000 + 500)
-          &&  repeat.times == 2 && repeat.ion.do.pop()
+          ?   setTimeout (repeat,  repeat.ion.do.after)
+          &&  repeat.times == 2 && repeat.ion.do.pop ()
           :  (repeat.times  = 1)
 
         ~ repeat.ion.do
