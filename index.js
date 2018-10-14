@@ -1,11 +1,11 @@
 ;
 ~
 { re:
-    { id: "anemojii.3.0@ions.iskitz.net"
+    { id: "anemojii.3.1@ions.iskitz.net"
     , is: "animated emoji ions"
 
     , by: "mike.lee@iskitz"
-    , at: "2018.01.04-08...2015"
+    , at: "2018.10.14+09...2015.10.21-07"
 
     , it: "Shows emoji faces that're all valid ions. It also explores"
         + "ionified literate programming.                            "
@@ -23,12 +23,11 @@
 , do:
     [ "choose a random face from the faces list"
     , "show that face"
-    , "repeat 2014 times waiting <= 1.5 seconds each time"
+    , "repeat 2014 times waiting .5 —> 1.5 seconds each time"
     ]
 
 , faces
-:   [ "+{'-':'-'};"
-    , "+['- : -'];"
+:   [ "+['- : -'];"
     , "+['- . -'];"
     , "+{'•':'•'};"
     , "+['• : •'];"
@@ -36,7 +35,6 @@
     , "+{'ö':'ö'};"
     , "+['ö : ö'];"
     , "+['ö . ö'];"
-    , "+{'*':'*'};"
     , "+['* : *'];"
     , "+['* . *'];"
     , "+{'o':'o'};"
@@ -45,9 +43,9 @@
     , "+{'O':'O'};"
     , "+['O : O'];"
     , "+['O . O'];"
-    , "+[‘• . •’];"
-    , "+[‘• ؈ •’];"
-    , "+[‘0 . 0’];"
+    , "+['• . •'];"
+    , "+['• ؈ •'];"
+    , "+['0 . 0'];"
     , "+{ 0 : 0 };"
     , "+{'0':'0'};"
     , "+['0 : 0'];"
@@ -65,17 +63,20 @@
     , "+['— ؈ —'];"
     , "+{'~':'~'};"
     , "+['~ . ~'];"
-    , "+{'+':'+'};"
+    , "+['# . #'];"
     , "+['+ . +'];"
     , "+['^ . ^'];"
     , "+{'^':'^'};"
-    , "+['๑˃̵ᴗ˂̵'];"
-    , "+[' ͡° ʖ ͡°'];"
-    , "+[' ͡° ͜ʖ ͡°'];"
-    , "+/d(~ . ~)b/;"
-    , "+/d(• . •)b/;"
-    , "+/d(- . -)b/;"
-    , '+["]\'• ؈ •\'["];'
+    , "+['@ . @'];"
+    , "+['๑˃̵ ᴗ ˂̵๑'];"
+    , "+['˃̵ ᴗ ˂̵'];"
+    , "+[' ͡° ʖ  ͡°'];"
+    , "+[' ͡°  ͜ʖ  ͡°'];"
+    , "+/ d(~ . ~)b /;"
+    , "+/ d(• . •)b /;"
+    , "+/ d(- . -)b /;"
+    , "+/ d( @ . @ )b /;"
+    , '+["]\'• ؈ •\'["]'
     , "+['~ ؈ ~'];"
     ]
 
@@ -106,7 +107,7 @@
         document.title = document.body.innerHTML = showFace.ion.faces.next
       }
 
-, "repeat 2014 times waiting <= 1.5 seconds each time"
+, "repeat 2014 times waiting .5 —> 1.5 seconds each time"
 :   function repeat ()
       { ~ {I
           :" repeat this ion's do actions 2014 times waiting up to 1.5 seconds"
@@ -115,7 +116,7 @@
           }
 
         ++repeat.times < 2015
-          ?   setTimeout (repeat, Math.random * 1500)
+          ?   setTimeout (repeat, Math.random * 1000 + 500)
           &&  repeat.times == 2 && repeat.ion.do.pop()
           :  (repeat.times  = 1)
 
