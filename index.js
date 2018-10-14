@@ -5,7 +5,7 @@
     , is: "animated emoji ions"
 
     , by: "mike.lee@iskitz"
-    , at: "2018.10.14+09...2015.10.21-07"
+    , at: "2018.10.15+09...2015.10.21-07"
 
     , it: "Shows emoji faces that're all valid ions. It also explores"
         + "ionified literate programming.                            "
@@ -85,12 +85,11 @@
 :   function chooseFace ()
       { ~ {I
           :" choose a face from the faces list by first generating a random"
-          +" number between 0 and the list's length. Next I use that number"
-          +" to select the face at the matching position within the list."
-          +" Lastly, I save the chosen face as a property on the faces list to"
-          +" simplify accessing it from other actions."
+          +" number between 0 and the list's length. Next I use that number to"
+          +" select the face at the matching position within the list. Lastly,"
+          +" I save the chosen face as a property on the faces list to simplify"
+          +" accessing it from other actions."
           }
-
         var faces       = chooseFace.ion.faces
           , choice      = Math.random * faces.length
           ; choice      = Math.floor (choice)
@@ -101,32 +100,36 @@
 
 , "show that face"
 :   function showFace ()
-      { ~ {I
-          :" show the chosen face by setting it as my web view's title and"
-          +" content."
-          }
-        document.title = document.body.innerHTML = showFace.ion.faces.next
+      { ~{I:"show the chosen face as my web view's title & content."}
+      ; document.title = document.body.innerHTML = showFace.ion.faces.next
       }
 
 , "wait .5 --> 1.5 seconds"
 :   function wait ()
-      { wait.ion.do.after = Math.random * 1000 + 500
+      { ~ {I
+          :" set the amount of time to wait after showing each face. I"
+          +" generate a random length of time between 0 & 1000 milliseconds"
+          +" then increase it by 500 milliseconds to ensure waiting for at"
+          +" least half a second before showing the next face. I keep this"
+          +" time as a property of this ion's do actions list to simplify"
+          +" accessing it from other actions."
+          }
+        wait.ion.do.after = Math.random * 1000 + 500
       }
 
 , "repeat 2014 times"
 :   function repeat ()
       { ~ {I
-          :" repeat this ion's do actions 2014 times waiting up to 1.5 seconds"
-          +" each time. I remove the repeat action on the second repeat to"
-          +" avoid doing all actions immediately *and* after a delay."
+          :" repeat this ion's list of things to do 2014 times after waiting"
+          +" each time. On the first repeat I begin tracking the number of"
+          +" times I've repeated as a property of the do actions list and"
+          +" remove the repeat action to avoid doing all actions without"
+          +" waiting some time after each."
           }
-
-        ++repeat.times < 2015
-          ?   setTimeout (repeat,  repeat.ion.do.after)
-          &&  repeat.times == 2 && repeat.ion.do.pop ()
-          :  (repeat.times  = 1)
-
-        ~ repeat.ion.do
+        var todo = repeat.ion.do
+         ++ todo . times <= 2014
+                 ? setTimeout (repeat, todo.after ^ todo)
+                 : isNaN (todo.times) && (todo.times = 1) && todo.pop () && repeat ()
       }
 }
 ;
