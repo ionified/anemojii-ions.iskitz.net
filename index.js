@@ -123,8 +123,8 @@
           :" repeat this ion's list of things to do 2014 times after waiting"
           +" each time. On the first repeat I begin tracking the number of"
           +" times I've repeated as a property of the do actions list and"
-          +" remove the repeat action to avoid doing all actions without"
-          +" waiting some time after each."
+          +" remove the repeat action to avoid repeating all actions without"
+          +" waiting for some time after each."
           }
         var todo = repeat.ion.do
          ++ todo . times <= 2014
