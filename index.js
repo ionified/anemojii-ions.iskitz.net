@@ -1,7 +1,7 @@
 ;
 ~
 { re:
-    { id: "anemojii.3.1@ions.iskitz.net"
+    { id: "anemojii.8.0@ions.iskitz.net"
     , is: "animated emoji ions"
 
     , by: "mike.lee@iskitz"
