@@ -1,10 +1,10 @@
 ;
 ~
 { re:
-    { id: "anemojii.8.1@ions.iskitz.net"
+    { id: "anemojii.8.2@ions.iskitz.net"
     , is: "animated emoji ions"
     , by: "mike.lee@iskitz"
-    , at: "2018.10.15+09...2015.10.21-07"
+    , at: "2018.10.16+09...2015.10.21-07"
     }
 
 , do:
@@ -93,7 +93,9 @@
       { var todo = repeat.ion.do
          ++ todo . times <= 2014
                  ? setTimeout (repeat, todo.after ^ todo)
-                 : !todo.times && (todo.times = 1) && todo.pop () && repeat ()
+                 : !todo.times && (todo.times = 1) && todo.pop () & repeat
+
+      ~ {i:"did "+ String (todo) +" "+ todo.times +" times"}
       }
 }
 ;
