@@ -1,10 +1,12 @@
 ;
 ~
 { re:
-    { id: "anemojii.re.8.1@ions.iskitz.net"
+    { id: 'anemojii.re@ions.iskitz.net'
     , is: "animated emoji ions"
-    , by: "mike.lee@iskitz"
-    , at: "2018.10.15+09...2015.10.21-07"
+    , by: 'mike.lee@iskitz'
+    , on: '2015.10.21-07'
+    , to: '2018.10.17+09'
+    , at: 9.0
 
     , it: "Shows emoji faces that're all valid ions. It also explores"
         + "ionified literate programming.                            "
@@ -20,13 +22,22 @@
     }
 
 , do:
-    [ "choose a random face from the faces list"
+    [ "get emoji faces"
+    , "choose a random face"
     , "show that face"
     , "wait .5 --> 1 second"
     , "repeat 2014 times"
     ]
 
-, "choose a random face from the faces list"
+, "get emoji faces"
+:   {I
+    :" request a list of emoji faces from an external ion & pause subsequent do"
+    +" actions. Next I sense when the faces are available. When I receive them,"
+    +" I keep them as the faces list to simplify accessing them from other"
+    +" actions. Lastly, I resume subsequent do actions."
+    }
+
+, "choose a random face"
 :   {I
     :" choose a face from the faces list by first generating a random"
     +" number between 0 and the list's length. Next I use that number to"
@@ -54,8 +65,8 @@
     :" repeat this ion's list of things to do 2014 times after waiting"
     +" each time. On the first repeat I begin tracking the number of"
     +" times I've repeated as a property of the do actions list and"
-    +" remove the repeat action to avoid repeating all actions without"
-    +" waiting for some time after each."
+    +" remove the repeat action to avoid unnecessarily repeating all"
+    +" actions without waiting for some time after each."
     }
 }
 ;
