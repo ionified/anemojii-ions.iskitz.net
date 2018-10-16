@@ -1,74 +1,44 @@
 ;
 ~
 { re:
-    { id: "anemojii.8.2@ions.iskitz.net"
+    { id: 'anemojii@ions.iskitz.net'
     , is: "animated emoji ions"
-    , by: "mike.lee@iskitz"
-    , at: "2018.10.16+09...2015.10.21-07"
+    , by: 'mike.lee@iskitz'
+    , on: '2015.10.21-07'
+    , to: '2018.10.17+09'
+    , at: 9.0
     }
 
 , do:
-    [ "choose a random face from the faces list"
+    [ "get emoji faces"
+    , "choose a random face"
     , "show that face"
     , "wait .5 --> 1 second"
     , "repeat 2014 times"
     ]
 
 , faces
-:   [ "+['- : -'];"
-    , "+['- . -'];"
-    , "+{'•':'•'};"
-    , "+['• : •'];"
-    , "+['• . •'];"
-    , "+{'ö':'ö'};"
-    , "+['ö : ö'];"
-    , "+['ö . ö'];"
-    , "+['* : *'];"
-    , "+['* . *'];"
-    , "+{'o':'o'};"
-    , "+['o : o'];"
-    , "+['o . o'];"
-    , "+{'O':'O'};"
-    , "+['O : O'];"
-    , "+['O . O'];"
-    , "+['• . •'];"
-    , "+['• ؈ •'];"
-    , "+['0 . 0'];"
-    , "+{ 0 : 0 };"
-    , "+{'0':'0'};"
-    , "+['0 : 0'];"
-    , "+{'õ':'õ'};"
-    , "+['õ . õ'];"
-    , "+{'ō':'ō'};"
-    , "+['ō . ō'];"
-    , "+{'ô':'ô'};"
-    , "+{'ø':'ø'};"
-    , "+['ó . ò'];"
-    , "+{'ó':'ò'};"
-    , "+{'ò':'ó'};"
-    , "+['ò . ó'];"
-    , " +[' . ']; "
-    , "+['— ؈ —'];"
-    , "+{'~':'~'};"
-    , "+['~ . ~'];"
-    , "+['# . #'];"
-    , "+['+ . +'];"
-    , "+['^ . ^'];"
-    , "+{'^':'^'};"
-    , "+['@ . @'];"
-    , "+['๑˃̵ ᴗ ˂̵๑'];"
-    , "+['˃̵ ᴗ ˂̵'];"
-    , "+[' ͡° ʖ  ͡°'];"
-    , "+[' ͡°  ͜ʖ  ͡°'];"
-    , "+/ d(~ . ~)b /;"
-    , "+/ d(• . •)b /;"
-    , "+/ d(- . -)b /;"
-    , "+/ d( @ . @ )b /;"
-    , '+["]\'• ؈ •\'["]'
-    , "+['~ ؈ ~'];"
-    ]
+:   null
 
-, "choose a random face from the faces list"
+, "get emoji faces"
+:   function getFaces ()
+      { var anemojii           = getFaces.ion
+          , todo               = anemojii.do.slice (1)
+          ; todo.ion           = anemojii.do.ion
+          ; anemojii.do.length = 1
+
+      ~ {get:'faces'}
+      & { on:'anemojii.faces@ions.iskitz.net'
+            ,'anemojii.faces@ions.iskitz.net'
+            : function gotFaces (ion)
+                { anemojii.faces = ion.faces
+                ~ {debug:'got these faces: '+ String (anemojii.faces)}
+                ~ (anemojii.do = todo)
+                }
+        }
+      }
+
+, "choose a random face"
 :   function chooseFace ()
       { var faces       = chooseFace.ion.faces
           , choice      = Math.random * faces.length | 0
