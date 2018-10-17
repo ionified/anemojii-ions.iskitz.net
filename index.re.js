@@ -6,7 +6,7 @@
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
     , to: '2018.10.17+09'
-    , at: 9.1
+    , at: 10.1
 
     , it: "Shows emoji faces that're all valid ions. It also explores"
         + "ionified literate programming.                            "
@@ -34,14 +34,15 @@
 :   {I
     :" request a list of emoji faces from an external ion & sense when it's"
     +" available. Once I receive it, I keep it as anemojii's faces list to"
-    +" simplify accessing it from anemojii's other actions."
+    +" simplify accessing it from anemojii's other actions then activate it."
     }
 
 , "wait until faces received"
 :   {I
-    :" pause subsequent do actions by moving them to a todo list & reducing the"
-    +" do list to only the get faces action. Once faces are received I resume"
-    +" do actions by setting the todo list as the do list then I activate it."
+    :" pause the active do list by moving its subsequent actions to a new list"
+    +" which reduces the active do list to only the get faces & this action. I"
+    +" then update anemojii's do list to the new list so that when it's"
+    +" reactivated, when faces are received, subsequent actions will resume."
     }
 
 , "choose a random face"

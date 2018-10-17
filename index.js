@@ -6,7 +6,7 @@
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
     , to: '2018.10.17+09'
-    , at: 9.1
+    , at: 10.1
     }
 
 , do:
@@ -31,18 +31,18 @@
                 { var anemojii       = getFaces.ion
                 ;     anemojii.faces = ion.faces
                 ~ {debug:'got these faces: '+ String (anemojii.faces)}
-                ~ (anemojii.do = anemojii.todo)
+                ~ anemojii.do
                 }
         }
       }
 
 , "wait until faces received"
 :   function waitForFaces (ion)
-      { var anemojii          = waitForFaces.ion
-          , doing             = anemojii.do
-          ; anemojii.todo     = doing.slice (2)
-          ; anemojii.todo.ion = doing.ion
-          ; doing.length      = 1
+      { var anemojii        = waitForFaces.ion
+          , doing           = anemojii.do
+          ; anemojii.do     = doing.slice (2)
+          ; anemojii.do.ion = anemojii
+          ; doing.length    = 1
       }
 
 , "choose a random face"
