@@ -5,8 +5,8 @@
     , is: "animated emoji ions"
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
-    , to: '2018.10.17+09'
-    , at: 10.2
+    , to: '2018.10.18+09'
+    , at: 10.3
     }
 
 , do:
@@ -42,7 +42,7 @@
           , doing           = anemojii.do
           ; anemojii.do     = doing.slice (2)
           ; anemojii.do.ion = anemojii
-          ; doing.length    = 1
+          ; doing.length    = 2
       }
 
 , "choose a random face"
@@ -50,8 +50,7 @@
       { var faces       = chooseFace.ion.faces
           , choice      = Math.random * faces.length | 0
           ; faces.next  = faces [choice]
-
-        ~{i:"chose "+ faces.next +" using random number "+ choice}
+      ~ {i:"chose "+ faces.next +" using random number "+ choice}
       }
 
 , "show that face"
@@ -67,12 +66,12 @@
 
 , "repeat 2014 times"
 :   function repeat ()
-      { var todo = repeat.ion.do
-         ++ todo . times <= 2014
-                 ? setTimeout (repeat, todo.after ^ todo)
-                 : !todo.times && (todo.times = 1) && todo.pop () & repeat
-
-      ~ {i:"did "+ String (todo) +" "+ todo.times +" times"}
+      { var  doing = repeat.ion.do
+        if ( doing . repeated   >   2014) return
+        setTimeout  (repeat     ,   doing.after)
+           ! doing . repeated   &&  doing.pop () && (doing.repeated = 0)
+             doing . repeated++ && ~doing
+      ~ {i: "did " + String (doing) +" "+ doing.repeated +" time(s)"}
       }
 }
 ;

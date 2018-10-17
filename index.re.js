@@ -5,8 +5,8 @@
     , is: "animated emoji ions"
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
-    , to: '2018.10.17+09'
-    , at: 10.2
+    , to: '2018.10.18+09'
+    , at: 10.3
 
     , it: "Shows emoji faces that're all valid ions. It also explores"
         + "ionified literate programming.                            "
@@ -40,9 +40,10 @@
 , "wait until faces received"
 :   {I
     :" pause the active do list by moving its subsequent actions to a new list"
-    +" which reduces the active do list to only the get faces & this action. I"
-    +" then update anemojii's do list to the new list so that when it's"
-    +" reactivated, when faces are received, subsequent actions will resume."
+    +" which reduces the active do list to only the get emoji faces & wait"
+    +" until faces received actions which have already been activated. I then"
+    +" update anemojii's do list to the new list so that when it's reactivated,"
+    +" when faces are received, subsequent actions will resume."
     }
 
 , "choose a random face"
@@ -70,11 +71,11 @@
 
 , "repeat 2014 times"
 :   {I
-    :" repeat this ion's list of things to do 2014 times after waiting"
-    +" each time. On the first repeat I begin tracking the number of"
-    +" times I've repeated as a property of the do actions list and"
-    +" remove the repeat action to avoid unnecessarily repeating all"
-    +" actions without waiting for some time after each."
+    :" repeat this ion's do actions list 2014 times after waiting some"
+    +" pre-calculated time each time. On the first repeat I remove the repeat"
+    +" 2014 times action from the list to avoid repeating all actions without"
+    +" waiting the pre-calculated time after each and begin tracking how many"
+    +" times I've repeated to ensure I repeat do actions exactly 2014 times."
     }
 }
 ;
