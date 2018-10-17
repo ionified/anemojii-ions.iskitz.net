@@ -6,7 +6,7 @@
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
     , to: '2018.10.17+09'
-    , at: 10.1
+    , at: 10.2
 
     , it: "Shows emoji faces that're all valid ions. It also explores"
         + "ionified literate programming.                            "

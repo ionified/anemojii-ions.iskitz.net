@@ -6,7 +6,7 @@
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
     , to: '2018.10.17+09'
-    , at: 10.1
+    , at: 10.2
     }
 
 , do:
@@ -30,7 +30,7 @@
             : function gotFaces (ion)
                 { var anemojii       = getFaces.ion
                 ;     anemojii.faces = ion.faces
-                ~ {debug:'got these faces: '+ String (anemojii.faces)}
+                ~ {i:"got these faces: "+ String (anemojii.faces)}
                 ~ anemojii.do
                 }
         }
