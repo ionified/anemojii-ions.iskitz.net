@@ -6,11 +6,12 @@
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
     , to: '2018.10.17+09'
-    , at: 9.0
+    , at: 9.1
     }
 
 , do:
     [ "get emoji faces"
+    , "wait until faces received"
     , "choose a random face"
     , "show that face"
     , "wait .5 --> 1 second"
@@ -22,20 +23,26 @@
 
 , "get emoji faces"
 :   function getFaces ()
-      { var anemojii           = getFaces.ion
-          , todo               = anemojii.do.slice (1)
-          ; todo.ion           = anemojii.do.ion
-          ; anemojii.do.length = 1
-
+      { 
       ~ {get:'faces'}
       & { on:'anemojii.faces@ions.iskitz.net'
             ,'anemojii.faces@ions.iskitz.net'
             : function gotFaces (ion)
-                { anemojii.faces = ion.faces
+                { var anemojii       = getFaces.ion
+                ;     anemojii.faces = ion.faces
                 ~ {debug:'got these faces: '+ String (anemojii.faces)}
-                ~ (anemojii.do = todo)
+                ~ (anemojii.do = anemojii.todo)
                 }
         }
+      }
+
+, "wait until faces received"
+:   function waitForFaces (ion)
+      { var anemojii          = waitForFaces.ion
+          , doing             = anemojii.do
+          ; anemojii.todo     = doing.slice (2)
+          ; anemojii.todo.ion = doing.ion
+          ; doing.length      = 1
       }
 
 , "choose a random face"
