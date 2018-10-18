@@ -6,57 +6,50 @@
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
     , to: '2018.10.18+09'
-    , at: 10.3
+    , at: 11
 
-    , it: "Shows emoji faces that're all valid ions. It also explores"
-        + "ionified literate programming.                            "
+    , it: "Shows emoji that're all valid ions. It also explores ionified "
+        + "literate programming.                                         "
 
-    , im: "Exploring ion API & runtime documentation syntax via"
-        + " ~I: do documentation once; only 1st time.          "
-        + " ~i: do documentation every time.                   "
-
-        + "I'd also, at some point, like to update this to generate faces based"
-        + " on preset eyes, noses, mouths & head accessories like earphones:   "
-        
-        +   /d(~ . ~)b/
+    , im: "Planning, at some point, to update anemojii to generate faces based "
+        + "on preset eyes, noses, mouths & accessories like earphones:         "
+        +                        /d(~ . ~)b/
     }
 
 , do:
-    [ "get emoji faces"
-    , "wait until faces received"
-    , "choose a random face"
-    , "show that face"
+    [ "get emoji"
+    , "wait for emoji"
+    , "choose a random emoji"
+    , "show that emoji"
     , "wait .5 --> 1 second"
     , "repeat 2014 times"
     ]
 
-, "get emoji faces"
+, "get emoji"
+:   {I:" request a list of emoji from an external ion."}
+
+, "wait for emoji"
 :   {I
-    :" request a list of emoji faces from an external ion & sense when it's"
-    +" available. Once I receive it, I keep it as anemojii's faces list to"
-    +" simplify accessing it from anemojii's other actions then activate it."
+    :" pause actions until emoji arrive by updating the actions list to only"
+    +" contain pending actions & by removing them from the active actions list"
+    +" before they're activated. Next, I add a sensor to observe when emoji"
+    +" arrive. Once they arrive, I keep them in a shared emoji list to simplify"
+    +" accessing them from anemojii's other actions. Finally, I resume"
+    +" previously paused actions by activating the updated actions list of"
+    +" pending actions."
     }
 
-, "wait until faces received"
+, "choose a random emoji"
 :   {I
-    :" pause the active do list by moving its subsequent actions to a new list"
-    +" which reduces the active do list to only the get emoji faces & wait"
-    +" until faces received actions which have already been activated. I then"
-    +" update anemojii's do list to the new list so that when it's reactivated,"
-    +" when faces are received, subsequent actions will resume."
-    }
-
-, "choose a random face"
-:   {I
-    :" choose a face from the faces list by first generating a random"
+    :" choose an emoji from the emoji list by first generating a random"
     +" number between 0 and the list's length. Next I use that number to"
-    +" select the face at the matching position within the list. Lastly,"
-    +" I save the chosen face as a property on the faces list to simplify"
+    +" select the emoji at the matching position within the list. Lastly,"
+    +" I save the chosen emoji as a property on the emoji list to simplify"
     +" accessing it from other actions."
     }
 
-, "show that face"
-:   {I:" show the chosen face as my web view's title & content."
+, "show that emoji"
+:   {I:" show the chosen emoji as my web view's title & content."
     }
 
 , "wait .5 --> 1 second"

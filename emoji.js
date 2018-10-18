@@ -1,15 +1,15 @@
 ;
 ~
 { re:
-    { id: 'anemojii.faces@ions.iskitz.net'
-    , is: "the anemojii app's emoji faces list"
+    { id: 'anemojii.emoji@ions.iskitz.net'
+    , is: "the anemojii app's emoji list"
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
-    , to: '2018.10.17+09'
-    , at: 1.7
+    , to: '2018.10.18+09'
+    , at: 1.8
     }
 
-, faces
+, emoji
 :   [ "+['- : -'];"
     , "+['- . -'];"
     , "+{'•':'•'};"

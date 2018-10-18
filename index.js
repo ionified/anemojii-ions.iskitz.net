@@ -6,62 +6,59 @@
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
     , to: '2018.10.18+09'
-    , at: 10.3
+    , at: 11
     }
 
 , do:
-    [ "get emoji faces"
-    , "wait until faces received"
-    , "choose a random face"
-    , "show that face"
+    [ "get emoji"
+    , "wait for emoji"
+    , "choose a random emoji"
+    , "show that emoji"
     , "wait .5 --> 1 second"
     , "repeat 2014 times"
     ]
 
-, faces
+, emoji
 :   null
 
-, "get emoji faces"
-:   function getFaces ()
-      { 
-      ~ {get:'faces'}
-      & { on:'anemojii.faces@ions.iskitz.net'
-            ,'anemojii.faces@ions.iskitz.net'
-            : function gotFaces (ion)
-                { var anemojii       = getFaces.ion
-                ;     anemojii.faces = ion.faces
-                ~ {i:"got these faces: "+ String (anemojii.faces)}
+, "get emoji"
+:   {get:'emoji'}
+
+, "wait for emoji"
+:   function waitForEmoji (ion)
+      { var anemojii        = waitForEmoji.ion
+          , doing           = anemojii.do
+          ; anemojii.do     = doing.slice (2)
+          ; anemojii.do.ion = anemojii
+          ; doing.length    = 2
+          
+      ~ { on:'anemojii.emoji@ions.iskitz.net'
+            ,'anemojii.emoji@ions.iskitz.net'
+            : function gotEmoji (ion)
+                { anemojii.emoji = ion.emoji
+                ~ {i:"got these emoji: "+ String (anemojii.emoji)}
                 ~ anemojii.do
                 }
         }
       }
 
-, "wait until faces received"
-:   function waitForFaces (ion)
-      { var anemojii        = waitForFaces.ion
-          , doing           = anemojii.do
-          ; anemojii.do     = doing.slice (2)
-          ; anemojii.do.ion = anemojii
-          ; doing.length    = 2
+, "choose a random emoji"
+:   function chooseEmoji ()
+      { var emoji       = chooseEmoji.ion.emoji
+          , choice      = Math.random * emoji.length | 0
+          ; emoji.next  = emoji [choice]
+      ~ {i:"chose "+ emoji.next +" using random number "+ choice}
       }
 
-, "choose a random face"
-:   function chooseFace ()
-      { var faces       = chooseFace.ion.faces
-          , choice      = Math.random * faces.length | 0
-          ; faces.next  = faces [choice]
-      ~ {i:"chose "+ faces.next +" using random number "+ choice}
-      }
-
-, "show that face"
-:   function showFace ()
-      { document.title = document.body.innerHTML = showFace.ion.faces.next
+, "show that emoji"
+:   function showEmoji ()
+      { document.title = document.body.innerHTML = showEmoji.ion.emoji.next
       }
 
 , "wait .5 --> 1 second"
 :   function wait ()
       { wait.ion.do.after = Math.random * 500 + 500 | 0
-      ~ {i:"will wait "+ wait.ion.do.after +" ms before showing the next face"}
+      ~ {i:"will wait "+ wait.ion.do.after +" ms before showing the next emoji"}
       }
 
 , "repeat 2014 times"
