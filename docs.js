@@ -3,10 +3,10 @@
 { re:
     { id: 'documenter@ions.iskitz.net'
     , is: "an ion that observes & presents live code documentation"
+    , at: +0.1
     , by: 'mike.lee@iskitz.net'
     , on: -4.200709
     , to: +9.20181018
-    , at: +0.1
 
     , it: "provides these apis:"
         + " ~I: do documentation once; only 1st time.          "

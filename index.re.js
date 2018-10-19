@@ -3,10 +3,10 @@
 { re:
     { id: 'anemojii.re@ions.iskitz.net'
     , is: "exploring animated emoji ions & ionified literate programming"
+    , at: 12.0
     , by: 'mike.lee@iskitz'
     , on: -7.2015102107
     , to: +9.20181019
-    , at: 12.0
     }
 
 , do:

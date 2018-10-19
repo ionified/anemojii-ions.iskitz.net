@@ -3,10 +3,10 @@
 { re:
     { id: 'anemojii@ions.iskitz.net'
     , is: "animated emoji ions"
+    , at: 12.0
     , by: 'mike.lee@iskitz'
     , on: -7.2015102107
     , to: +9.20181019
-    , at: 12.0
     }
 
 , do:

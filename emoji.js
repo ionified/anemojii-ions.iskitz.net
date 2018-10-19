@@ -3,10 +3,10 @@
 { re:
     { id: 'anemojii.emoji@ions.iskitz.net'
     , is: "anemojii's emoji ions"
+    , at: +1.9
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
     , to: +9.20181019
-    , at: +1.9
     , it: "will soon create emoji ions with eyes, ears, nose & mouth."
     }
 
