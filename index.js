@@ -5,8 +5,8 @@
     , is: "animated emoji ions"
     , by: 'mike.lee@iskitz'
     , on: '2015.10.21-07'
-    , to: '2018.10.18+09'
-    , at: 11
+    , to: '2018.10.19+09'
+    , at: 12.0
     }
 
 , do:
@@ -14,7 +14,7 @@
     , "wait for emoji"
     , "choose a random emoji"
     , "show that emoji"
-    , "wait .5 --> 1 second"
+    , "wait .25 --> 1 second"
     , "repeat 2014 times"
     ]
 
@@ -36,7 +36,7 @@
             ,'anemojii.emoji@ions.iskitz.net'
             : function gotEmoji (ion)
                 { anemojii.emoji = ion.emoji
-                ~ {i:"got these emoji: "+ String (anemojii.emoji)}
+                ~ {i:"got these emoji: "+ String (anemojii.emoji) +" from"+ ion.re.id}
                 ~ anemojii.do
                 }
         }
@@ -55,9 +55,9 @@
       { document.title = document.body.innerHTML = showEmoji.ion.emoji.next
       }
 
-, "wait .5 --> 1 second"
+, "wait .25 --> 1 second"
 :   function wait ()
-      { wait.ion.do.after = Math.random * 500 + 500 | 0
+      { wait.ion.do.after = Math.random * 750 + 250 | 0
       ~ {i:"will wait "+ wait.ion.do.after +" ms before showing the next emoji"}
       }
 
