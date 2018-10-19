@@ -5,7 +5,7 @@
     , is: "exploring animated emoji ions & ionified literate programming"
     , at: 12.0
     , by: 'mike.lee@iskitz'
-    , on: -7.2015102107
+    , on: -7.20151021
     , to: +9.20181019
     }
 
