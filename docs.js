@@ -4,9 +4,9 @@
     { id: 'documenter@ions.iskitz.net'
     , is: "an ion that observes & presents live code documentation"
     , by: 'mike.lee@iskitz.net'
-    , on: '2007.09-04'
-    , to: '2018.10.18+09'
-    , at: 0.1
+    , on: -4.200709
+    , to: +9.20181018
+    , at: +0.1
 
     , it: "provides these apis:"
         + " ~I: do documentation once; only 1st time.          "
