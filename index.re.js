@@ -4,8 +4,8 @@
     { id: 'anemojii.re@ions.iskitz.net'
     , is: "exploring animated emoji ions & ionified literate programming"
     , by: 'mike.lee@iskitz'
-    , on: '2015.10.21-07'
-    , to: '2018.10.19+09'
+    , on: -7.2015102107
+    , to: +9.20181019
     , at: 12.0
     }
 
