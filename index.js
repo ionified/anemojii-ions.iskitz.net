@@ -3,19 +3,19 @@
 { re:
     { id: 'anemojii@ions.iskitz.net'
     , is: "animated emoji ions"
-    , at: 12.0
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
-    , to: +9.20181019
+    , to: +9.20181021
+    , at: 14.0
     }
 
 , do:
     [ "get emoji"
     , "wait for emoji"
-    , "choose a random emoji"
+    , "choose an emoji"
     , "show that emoji"
     , "wait .25 --> 1 second"
-    , "repeat 2014 times"
+    , "repeat 20151021 times"
     ]
 
 , emoji
@@ -35,19 +35,18 @@
       ~ { on:'anemojii.emoji@ions.iskitz.net'
             ,'anemojii.emoji@ions.iskitz.net'
             : function gotEmoji (ion)
-                { anemojii.emoji = ion.emoji
-                ~ {i:"got these emoji: "+ String (anemojii.emoji) +" from"+ ion.re.id}
+                { anemojii.emoji = ion
+                ~ {i:"got emoji from: "+ ion.re.id}
                 ~ anemojii.do
                 }
         }
       }
 
-, "choose a random emoji"
+, "choose an emoji"
 :   function chooseEmoji ()
-      { var emoji       = chooseEmoji.ion.emoji
-          , choice      = Math.random * emoji.length | 0
-          ; emoji.next  = emoji [choice]
-      ~ {i:"chose "+ emoji.next +" using random number "+ choice}
+      { var emoji      = chooseEmoji.ion.emoji
+          ; emoji.next = emoji.new()
+      ~ {i:"chose "+ emoji.next}
       }
 
 , "show that emoji"
@@ -61,10 +60,10 @@
       ~ {i:"will wait "+ wait.ion.do.after +" ms before showing the next emoji"}
       }
 
-, "repeat 2014 times"
+, "repeat 20151021 times"
 :   function repeat ()
       { var  doing = repeat.ion.do
-        if ( doing . repeated   >   2014) return
+        if ( doing . repeated   >   20151021) return
         setTimeout  (repeat     ,   doing.after)
            ! doing . repeated   &&  doing.pop () && (doing.repeated = 0)
              doing . repeated++ && ~doing
