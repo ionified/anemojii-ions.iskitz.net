@@ -3,23 +3,23 @@
 { re:
     { id: 'anemojii.re@ions.iskitz.net'
     , is: "exploring animated emoji ions & ionified literate programming"
-    , at: 12.0
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
-    , to: +9.20181019
+    , to: +9.20181021
+    , at: 14.0
     }
 
 , do:
     [ "get emoji"
     , "wait for emoji"
-    , "choose a random emoji"
+    , "choose an emoji"
     , "show that emoji"
     , "wait .25 --> 1 second"
-    , "repeat 2014 times"
+    , "repeat 20151021 times"
     ]
 
 , "get emoji"
-:   {I:" request a list of emoji via an external ion."}
+:   {I:" request anemoji's emoji ion."}
 
 , "wait for emoji"
 :   {I
@@ -32,13 +32,11 @@
     +" pending actions."
     }
 
-, "choose a random emoji"
+, "choose an emoji"
 :   {I
-    :" choose an emoji from the emoji list by first generating a random"
-    +" number between 0 and the list's length. Next I use that number to"
-    +" select the emoji at the matching position within the list. Lastly,"
-    +" I save the chosen emoji as a property on the emoji list to simplify"
-    +" accessing it from other actions."
+    :" choose an emoji by requesting it from anemoji's emoji ion. I then save the"
+    +" chosen emoji as a property on the emoji list to simplify accessing it from"
+    +" other actions."
     }
 
 , "show that emoji"
@@ -54,13 +52,13 @@
     +" actions list to simplify accessing it from other actions."
     }
 
-, "repeat 2014 times"
+, "repeat 20151021 times"
 :   {I
-    :" repeat this ion's do actions list 2014 times after waiting some"
+    :" repeat this ion's do actions list 20151021 times after waiting some"
     +" pre-calculated time each time. On the first repeat I remove the repeat"
-    +" 2014 times action from the list to avoid repeating all actions without"
-    +" waiting the pre-calculated time after each and begin tracking how many"
-    +" times I've repeated to ensure I repeat do actions exactly 2014 times."
+    +" 20151021 times action from the list to avoid repeating all actions without"
+    +" waiting the pre-calculated time after each and begin tracking how many times"
+    +" I've repeated to ensure I repeat do actions exactly 20151021 times."
     }
 }
 ;
