@@ -5,11 +5,11 @@
     , is: "anemojii's emoji ions"
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
-    , to: +9.20181021
+    , to: +9.20181022
     , at: +2.2
     , it:
         [ "creates a random ion, aesop | storie type emoji for each request"
-        , "found an ionify bug where ion members named next [new] have no .ion field"
+        , "found an ionify bug where ion members named next have no .ion field"
         ]
     }
 
@@ -22,7 +22,7 @@
       }
 
 , types
-:   ['aesop', 'ion',/*'number',*/'storie'/*, 'string'*/]
+:   ['aesop', 'ion'/*, 'number'*/, 'storie'/*, 'string'*/]
 
 , create
 :   function create (compose)
