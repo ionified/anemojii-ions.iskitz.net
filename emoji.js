@@ -6,7 +6,7 @@
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
     , to: +9.20181021
-    , at: +2.1
+    , at: +2.2
     , it:
         [ "creates a random ion, aesop | storie type emoji for each request"
         , "found an ionify bug where ion members named next [new] have no .ion field"
@@ -22,7 +22,7 @@
       }
 
 , types
-:   ['aesop', 'ion', 'storie']
+:   ['aesop', 'ion',/*'number',*/'storie'/*, 'string'*/]
 
 , create
 :   function create (compose)
@@ -31,13 +31,13 @@
           , eyes  = emoji.eyes
           , ears  = emoji.ears
           , ear   = Math.random * ears.left.length | 0
-          , face  = { ears
-                    :   { left  : ears.left  [ear]
-                        , right : ears.right [ear]
+          , face  = { left
+                    :   { ear: ears.left [ear]
+                        , eye: get (eyes) 
                         }
-                    , eyes
-                    :   { left  : get (eyes)
-                        , right : get (eyes)
+                    , right
+                    :   { ear: ears.right [ear]
+                        , eye: get (eyes)
                         }
                     , nose
                     :   get (emoji.nose)
@@ -48,21 +48,35 @@
 , aesop
 :   function aesop (emoji)
       { with (emoji)
-          return  ( ears.left
-                  + "['"+ eyes.left +' '+ nose +' '+ eyes.right +"']"
-                  + ears.right
+          return  ( left.ear
+                  + "['"+ left.eye +' '+ nose +' '+ right.eye +"']"
+                  + right.ear
                   )
       }
 
 , ion
 :   function ion (emoji)
       { with (emoji)
-          return ears.left +"{'"+ eyes.left +"':'"+ eyes.right +"'}"+ ears.right
+          return left.ear +"{'"+ left.eye +"':'"+ right.eye +"'}"+ right.ear
+      }
+
+, number
+:   function number (emoji)
+      { []^0.0^[] , []*0.0*[] , []+0.0+[] , []-0.0-[] , []|0.0|[] & []%0.0%[]
+        with (emoji)
+          return left.ear + '0.0' + right.ear
       }
 
 , storie
 :   function storie (emoji)
-      { with (emoji) return '+/ d('+ eyes.left +' '+ nose +' '+ eyes.right +')b /;'
+      { with (emoji) return '+/ d('+ left.eye +' '+ nose +' '+ right.eye +')b /;'
+      }
+
+, string
+:   function string (emoji)
+      { []^'0 . 0'^[] & 0|'~ . ~'|0  <= /examples/
+        with (emoji)
+          return left.ear +"'"+ left.eye +' '+ nose +' '+ right.eye +"'"+ right.ear
       }
 
 , choose
@@ -79,19 +93,22 @@
 
 , ears
 :   { left
-    :   [ /*'d',  'q',*/'~',  '-'
-        , '0-' , '0^', '0*', '0+', '0<', '0&', '0%'
-      //, '0<<'    //, '0|'
-        , '8-' , '8^', '8*', '8+', '8<'//'8&', '8%'
-      //, '8<<'    //, '8|'
+    :   [ /*'d',  'q',*/'~',  '-', '+'
+        , '0-' , '0^', '0*', '0+', '0>', '0&', '0%'
+      //, '0>>', '0|'
+        , '8-' , '8^', '8*', '8+', '8>'//'8&', '8%'
+      //, '8>>', '8|'
+        , '[]-', '[]^', '[]*', '[]+','[]>'//, '[]<'
         ]
 
     , right
-    :   [ /*'b',  'p',*/';', ';'
-        ,  '-0', '^0', '*0', '+0', '>0', '&0', '%0'
-      //, '>>0'    //, '|0'
-        ,  '-8', '^8', '*8', '+8', '>8'//'&8', '%8'
-      //, '>>8'    //, '|8'
+    :   [ /*'b',  'p',*/';',  ';',  ';'
+        ,  '-0', '^0', '*0', '+0', '<0', '&0', '%0'
+      //, '<<0', '|0'
+        ,  '-8', '^8', '*8', '+8', '<8'//'&8', '%8'
+      //, '<<8', '|8'
+        , '-[]', '^[]', '*[]', '+[]','<[]'//, '>[]'
+      //, '|[]'
         ]
     }
 
