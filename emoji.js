@@ -6,16 +6,10 @@
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
     , to: +9.20181021
-    , at: +2.0
+    , at: +2.1
     , it:
-        [ "found an ionify bug where ion members named next [new] have no .ion field"
-        , "randomly chooses to create ion, aesop | storie type emoji"
-        
-        , "will create storie emoji if eval (left ear +[0.0]+ right ear) is an Error"
-        +       / left ear ( eye nose eye ) right ear /
-
-        , "will create ion emoji, like" + {'ö':'~'} +" via"
-        + "       left ear {'eye nose eye'} right ear"
+        [ "creates a random ion, aesop | storie type emoji for each request"
+        , "found an ionify bug where ion members named next [new] have no .ion field"
         ]
     }
 
@@ -24,39 +18,51 @@
       { var emoji = next.ion
           , types = emoji.types
           , type  = types [Math.random * types.length | 0]
-          ; return emoji [type]()
+          ; return emoji.create (emoji [type])
       }
 
 , types
 :   ['aesop', 'ion', 'storie']
 
-, aesop
-:   function aesop ()
-      { var emoji = aesop.ion
-          , add   = emoji.choose
+, create
+:   function create (compose)
+      { var emoji = create.ion
+          , get   = emoji.choose
           , eyes  = emoji.eyes
-          , nose  = emoji.nose
           , ears  = emoji.ears
           , ear   = Math.random * ears.left.length | 0
-          ; return  ears.left [ear]
-                  + "['"
-                  + add (eyes)
-                  + ' '
-                  + add (nose)
-                  + ' '
-                  + add (eyes)
-                  + "']"
-                  + ears.right [ear]
+          , face  = { ears
+                    :   { left  : ears.left  [ear]
+                        , right : ears.right [ear]
+                        }
+                    , eyes
+                    :   { left  : get (eyes)
+                        , right : get (eyes)
+                        }
+                    , nose
+                    :   get (emoji.nose)
+                    }
+        return compose (face)
+      }
+
+, aesop
+:   function aesop (emoji)
+      { with (emoji)
+          return  ( ears.left
+                  + "['"+ eyes.left +' '+ nose +' '+ eyes.right +"']"
+                  + ears.right
+                  )
       }
 
 , ion
-:   function ion ()
-      { return "+{'ö':'~'};"
+:   function ion (emoji)
+      { with (emoji)
+          return ears.left +"{'"+ eyes.left +"':'"+ eyes.right +"'}"+ ears.right
       }
 
 , storie
-:   function storie ()
-      { return "+/q('ö . ~')p/;"
+:   function storie (emoji)
+      { with (emoji) return '+/ d('+ eyes.left +' '+ nose +' '+ eyes.right +')b /;'
       }
 
 , choose
@@ -75,23 +81,23 @@
 :   { left
     :   [ /*'d',  'q',*/'~',  '-'
         , '0-' , '0^', '0*', '0+', '0<', '0&', '0%'
-        , '0<<'    //, '0|'
+      //, '0<<'    //, '0|'
         , '8-' , '8^', '8*', '8+', '8<'//'8&', '8%'
-        , '8<<'    //, '8|'
+      //, '8<<'    //, '8|'
         ]
 
     , right
     :   [ /*'b',  'p',*/';', ';'
         ,  '-0', '^0', '*0', '+0', '>0', '&0', '%0'
-        , '>>0'    //, '|0'
+      //, '>>0'    //, '|0'
         ,  '-8', '^8', '*8', '+8', '>8'//'&8', '%8'
-        , '>>8'    //, '|8'
+      //, '>>8'    //, '|8'
         ]
     }
 
 , nose
 :   [ '.', ',', ':', ';', 'ᴗ', '¿', 'ʖ', ' ͜ʖ'
-    //, '؈', 'ډ', 'ڊ', 'ڋ', 'ڌ', 'ڍ', 'ڎ', 'ڏ', 'ڐ'
+, '؈', 'ډ', 'ڊ', 'ڋ', 'ڌ', 'ڍ', 'ڎ', 'ڏ', 'ڐ'
     ]
 }
 ;

@@ -2,9 +2,11 @@
 
 html, body
   { background-color: #000
-  ; margin  : 0
-  ; padding : 0
-  ; width   : 100%
+  ; direction       : ltr
+  ; unicode-bidi    : bidi-override
+  ; margin          : 0
+  ; padding         : 0
+  ; width           : 100%
   }
 
 body
