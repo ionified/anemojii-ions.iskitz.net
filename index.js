@@ -5,8 +5,8 @@
     , is: "animated emoji ions"
     , by: 'mike.lee@iskitz'
     , at: -7.20151021
-    , to: -7.20181101
-    , on: 14.3
+    , to: -8.20181114
+    , on: 14.4
     }
 
 , do:
@@ -22,31 +22,37 @@
 :   null
 
 , "get emoji"
-:   {get:'emoji'}
+:   function getEmoji (ion)
+      {~{get:'emoji'}
+       +{ on:'anemojii.emoji@ions.iskitz.net'
+            ,'anemojii.emoji@ions.iskitz.net'
+            : getEmoji.ion.gotEmoji
+        }
+      }
 
 , "wait for emoji"
-:   function waitForEmoji (ion)
-      { var anemojii        = waitForEmoji.ion
+:   function awaitEmoji (ion)
+      { var anemojii        = awaitEmoji.ion
           , doing           = anemojii.do
           ; anemojii.do     = doing.slice (2)
           ; anemojii.do.ion = anemojii
           ; doing.length    = 2
-          
-      ~ { on:'anemojii.emoji@ions.iskitz.net'
-            ,'anemojii.emoji@ions.iskitz.net'
-            : function gotEmoji (ion)
-                { anemojii.emoji = ion
-                ~ {i:"got emoji from: "+ ion.re.id}
-                ~ anemojii.do
-                }
-        }
+      ~ {i:`set do to ${anemojii.do}`}
+      }
+
+, gotEmoji
+:   function gotEmoji (ion)
+      { var anemojii       = gotEmoji.ion
+      ;     anemojii.emoji = ion
+      ~ {i:`got emoji from: ${ion.re.id} & will ${anemojii.do}`}
+      ~     anemojii.do
       }
 
 , "choose an emoji"
 :   function chooseEmoji ()
       { var emoji      = chooseEmoji.ion.emoji
           ; emoji.next = emoji.new()
-      ~ {i:"chose "+ emoji.next}
+      ~ {i:`chose ${emoji.next}`}
       }
 
 , "show that emoji"
@@ -57,7 +63,7 @@
 , "wait .25 --> 1 second"
 :   function wait ()
       { wait.ion.do.after = Math.random * 750 + 250 | 0
-      ~ {i:"will wait "+ wait.ion.do.after +" ms before showing the next emoji"}
+      ~ {i:`will wait ${wait.ion.do.after} ms before showing the next emoji`}
       }
 
 , "repeat 20151021 times"
@@ -67,7 +73,7 @@
         setTimeout  (repeat     ,   doing.after)
            ! doing . repeated   &&  doing.pop () && (doing.repeated = 0)
              doing . repeated++ && ~doing
-      ~ {i: "did " + String (doing) +" "+ doing.repeated +" time(s)"}
+      ~ {i: `did ${doing} ${doing.repeated} time(s)`}
       }
 }
 ;
