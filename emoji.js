@@ -29,15 +29,16 @@
       { var emoji = create.ion
           , get   = emoji.choose
           , eyes  = emoji.eyes
+          , eye   = Math.random * eyes.length | 0
           , ears  = emoji.ears
           , ear   = Math.random * ears.left.length | 0
           , face  = { left
                     :   { ear: ears.left [ear]
-                        , eye: get (eyes) 
+                        , eye: eyes [eye] //get (eyes) 
                         }
                     , right
                     :   { ear: ears.right [ear]
-                        , eye: get (eyes)
+                        , eye: eyes [eye] //get (eyes)
                         }
                     , nose
                     :   get (emoji.nose)
