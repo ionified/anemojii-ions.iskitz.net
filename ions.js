@@ -1,3 +1,3 @@
 ;
-~ {debug:!true, get:['docs','index']}
+~ {debug:!true, get:['index']}
 ;
