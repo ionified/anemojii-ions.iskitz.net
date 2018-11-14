@@ -2,11 +2,11 @@
 ~
 { re:
     { id: 'anemojii.emoji@ions.iskitz.net'
-    , is: "anemojii's emoji ions"
+    , is: "anemojii's emoji"
     , by: 'mike.lee@iskitz'
-    , on: -7.20151021
-    , to: +9.20181022
-    , at: +2.2
+    , at: -7.20151021
+    , to: -7.20181101
+    , on: +2.2
     , it:
         [ "creates a random ion, aesop | storie type emoji for each request"
         , "found an ionify bug where ion members named next have no .ion field"
@@ -69,7 +69,7 @@
 
 , storie
 :   function storie (emoji)
-      { with (emoji) return '+/ d('+ left.eye +' '+ nose +' '+ right.eye +')b /;'
+      { with (emoji) return "+/d('"+ left.eye +' '+ nose +' '+ right.eye +"')b/;"
       }
 
 , string
