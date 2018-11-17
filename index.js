@@ -4,9 +4,9 @@
     { id: 'anemojii@ions.iskitz.net'
     , is: "animated emoji ions"
     , by: 'mike.lee@iskitz'
-    , at: -7.20151021
-    , to: -8.20181114
-    , on: 14.4
+    , on: -7.20151021
+    , to: -8.20181116
+    , at: 14.4
     }
 
 , do:
