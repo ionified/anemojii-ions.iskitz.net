@@ -1,3 +1,8 @@
 ;
-~ {debug:!true, get:['index']}
+~
+{ debug :  !true
+, info  :   true
+, log   :  !true
+, get   : ['index']
+}
 ;
