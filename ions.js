@@ -1,8 +1,9 @@
 ;
 ~
 { debug :  !true
-, info  :   true
+, info  :  !true
 , log   :  !true
-, get   : ['index']
+, warn  :  !true
+, get   : ['i@ionify', 'index']
 }
 ;
