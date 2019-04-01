@@ -5,15 +5,15 @@
     , is: "animated emoji ions"
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
-    , to: -8.20181116
-    , at: 14.4
+    , to: -7.20190331
+    , at: 15.1
     }
 
 , do:
-    [ "get emoji"
-    , "wait for emoji"
-    , "choose an emoji"
-    , "show that emoji"
+    [ "request emoji"
+    ,   "await emoji"
+    ,  "choose emoji"
+    ,    "show emoji"
     , "wait .25 --> 1 second"
     , "repeat 20151021 times"
     ]
@@ -21,54 +21,54 @@
 , emoji
 :   null
 
-, "get emoji"
-:   function getEmoji (ion)
-      {~{get:'emoji'}
-       +{ on:'anemojii.emoji@ions.iskitz.net'
+,"request emoji"
+:  function getEmoji ()
+      {~{get:'emoji'
+        , on:'anemojii.emoji@ions.iskitz.net'
             ,'anemojii.emoji@ions.iskitz.net'
-            : getEmoji.ion.gotEmoji
+            : getEmoji.home.gotEmoji
         }
       }
 
-, "wait for emoji"
-:   function awaitEmoji (ion)
-      { var anemojii        = awaitEmoji.ion
-          , doing           = anemojii.do
-          ; anemojii.do     = doing.slice (2)
-          ; anemojii.do.ion = anemojii
-          ; doing.length    = 2
+,"await emoji"
+:   function awaitEmoji ()
+      { var anemojii         = awaitEmoji.home
+          , doing            = anemojii.do
+          ; anemojii.do      = doing.slice (2)
+          ; anemojii.do.home = anemojii
+          ; doing.length     = 2
       ~ {i:`set do to ${anemojii.do}`}
       }
 
 , gotEmoji
-:   function gotEmoji (ion)
-      { var anemojii       = gotEmoji.ion
-      ;     anemojii.emoji = ion
-      ~ {i:`got emoji from: ${ion.re.id} & will ${anemojii.do}`}
+:   function gotEmoji ()
+      { var anemojii       = gotEmoji.home
+      ;     anemojii.emoji = this
+      ~ {i:`got emoji from: ${this.re.id} & will ${anemojii.do}`}
       ~     anemojii.do
       }
 
-, "choose an emoji"
+, "choose emoji"
 :   function chooseEmoji ()
-      { var emoji      = chooseEmoji.ion.emoji
+      { var emoji      = chooseEmoji.home.emoji
           ; emoji.next = emoji.new()
       ~ {i:`chose ${emoji.next}`}
       }
 
-, "show that emoji"
+, "show emoji"
 :   function showEmoji ()
-      { document.title = document.body.innerHTML = showEmoji.ion.emoji.next
+      { document.title = document.body.innerHTML = showEmoji.home.emoji.next
       }
 
 , "wait .25 --> 1 second"
 :   function wait ()
-      { wait.ion.do.after = Math.random * 750 + 250 | 0
-      ~ {i:`will wait ${wait.ion.do.after} ms before showing the next emoji`}
+      { wait.home.do.after = Math.random * 750 + 250 | 0
+      ~ {i:`will wait ${wait.home.do.after} ms before showing the next emoji`}
       }
 
 , "repeat 20151021 times"
 :   function repeat ()
-      { var  doing = repeat.ion.do
+      { var  doing = repeat.home.do
         if ( doing . repeated   >   20151021) return
         setTimeout  (repeat     ,   doing.after)
            ! doing . repeated   &&  doing.pop () && (doing.repeated = 0)

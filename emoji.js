@@ -5,17 +5,17 @@
     , is: "anemojii's emoji"
     , by: 'mike.lee@iskitz'
     , at: -7.20151021
-    , to: -7.20181101
-    , on: +2.2
+    , to: -7.20190330
+    , on: +2.3
     , it:
         [ "creates a random ion, aesop | storie type emoji for each request"
-        , "found an ionify bug where ion members named next have no .ion field"
+        , "found an ionify bug where ion members named next have no .home field"
         ]
     }
 
 , new
 :   function next ()
-      { var emoji = next.ion
+      { var emoji = next.home
           , types = emoji.types
           , type  = types [Math.random * types.length | 0]
           ; return emoji.create (emoji [type])
@@ -26,7 +26,7 @@
 
 , create
 :   function create (compose)
-      { var emoji = create.ion
+      { var emoji = create.home
           , get   = emoji.choose
           , eyes  = emoji.eyes
           , eye   = Math.random * eyes.length | 0

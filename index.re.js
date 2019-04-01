@@ -2,26 +2,26 @@
 ~
 { re:
     { id: 'anemojii.re@ions.iskitz.net'
-    , is: "exploring animated emoji ions & ionified literate programming"
     , by: 'mike.lee@iskitz'
-    , at: -7.20151021
-    , to: -7.20181101
-    , on: 14.3
+    , on: -7.20151021
+    , to: -7.20190116
+    , at: 15.0
+    , is: "an exploration of animated emoji ions & ionified literate programming"
     }
 
 , do:
-    [ "get emoji"
-    , "wait for emoji"
-    , "choose an emoji"
-    , "show that emoji"
+    [ "request emoji"
+    , "await emoji"
+    , "choose emoji"
+    , "show emoji"
     , "wait .25 --> 1 second"
     , "repeat 20151021 times"
     ]
 
-, "get emoji"
+, "request emoji"
 :   {I:" request anemoji's emoji ion."}
 
-, "wait for emoji"
+, "await emoji"
 :   {I
     :" pause actions until emoji arrive by updating the do actions list to only"
     +" contain pending actions & by removing them from the active do actions"
@@ -32,14 +32,14 @@
     +" pending actions."
     }
 
-, "choose an emoji"
+, "choose emoji"
 :   {I
     :" choose an emoji by requesting it from anemoji's emoji ion. I then save the"
     +" chosen emoji as a property on the emoji list to simplify accessing it from"
     +" other actions."
     }
 
-, "show that emoji"
+, "show emoji"
 :   {I:" show the chosen emoji as my web view's title & content."
     }
 
