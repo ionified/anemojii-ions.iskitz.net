@@ -6,9 +6,10 @@
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
     , to: -7.20200417
-    , at: 15.2
+    , at: 15.3
     , it: "it explores ionified literate programming while randomly displaying "
-        + "valid emoji face lions: literal ions: invoked object notations."
+        + "valid emoji face lions: literal ions: invoked object notations.     "
+        + "Learn more about ions, ionify & ionified @ https://why.ionify.net/  "
 }
 
 , do:
@@ -24,30 +25,32 @@
 :   null
 
 ,"request emoji"
-:  function getEmoji ()
-      {~{get:'emoji'
-        , on:'anemojii.emoji@ions.iskitz.net'
+:  {get:'emoji'}
+
+,"await emoji"
+:   function awaitEmoji ()
+      { ~
+        { on:'anemojii.emoji@ions.iskitz.net'
             ,'anemojii.emoji@ions.iskitz.net'
-            : getEmoji.with.gotEmoji
+            : awaitEmoji.with.gotEmoji
         }
+
+        var anemojii         = awaitEmoji.with
+          , doing            = anemojii.do
+          ; anemojii.do      = doing.slice (2)
+          ; anemojii.do.with = anemojii
+          ; doing.length     = 2
+
+        ~ {i:`set do to ${anemojii.do}`}
       }
 
 , gotEmoji
 :   function gotEmoji ()
       { var anemojii       = gotEmoji.with
-      ;     anemojii.emoji = this
-      ~ {i:`got emoji from: ${this.re.id} & will ${anemojii.do}`}
-      ~     anemojii.do
-      }
+          ; anemojii.emoji = this
 
-,"await emoji"
-:   function awaitEmoji ()
-      { var anemojii         = awaitEmoji.with
-          , doing            = anemojii.do
-          ; anemojii.do      = doing.slice (2)
-          ; anemojii.do.with = anemojii
-          ; doing.length     = 2
-      ~ {i:`set do to ${anemojii.do}`}
+      ~ {i:`got emoji from: ${this.re.id} & will ${anemojii.do}`}
+      ~ anemojii.do
       }
 
 , "choose emoji"
@@ -70,12 +73,14 @@
 
 , "repeat 20151021 times"
 :   function repeat ()
-      { var  doing = repeat.with.do
-        if ( doing . repeated   >   20151021) return
-        setTimeout  (repeat     ,   doing.after)
-           ! doing . repeated   &&  doing.pop () && (doing.repeated = 0)
-             doing . repeated++ && ~doing
-      ~ {i: `did ${doing} ${doing.repeated} time(s)`}
+      { var   todo = repeat.with.do
+        if (  todo . repeated   >   20151021  ) return
+        setTimeout ( repeat     ,   todo.after)
+
+            ! todo . repeated   &&  todo.pop () && (todo.repeated = 0)
+              todo . repeated++ && ~todo
+
+      ~ {i: `did ${todo} ${todo.repeated} time(s)`}
       }
 }
 ;
