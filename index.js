@@ -6,8 +6,8 @@
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
     , to: -7.20200417
-    , at: 15.4
-    , it: "it explores ionified literate programming while randomly displaying "
+    , at: 15.5
+    , it: "explores ionified literate programming while randomly displaying    "
         + "valid emoji face lions: literal ions: invoked object notations.     "
         + "Learn more about ions, ionify & ionified @ https://why.ionify.net/  "
 }
