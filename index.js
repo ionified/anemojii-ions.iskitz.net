@@ -74,12 +74,15 @@
 
 , "repeat 20151021 times"
 :   function repeat ()
-      { var   todo = repeat.with.do
-        if (  todo . repeated   >   20151021  ) return
-        setTimeout ( repeat     ,   todo.after)
+      { clearTimeout (repeat.last)
 
-            ! todo . repeated   &&  todo.pop () && (todo.repeated = 0)
-              todo . repeated++ && ~todo
+        var   todo   =  repeat.with.do
+        if (  todo   .  repeated > 20151021) return
+
+        repeat.last  = setTimeout (repeat, todo.after)
+
+            ! todo   . repeated   &&  todo.pop () && (todo.repeated = 0)
+              todo   . repeated++ && ~todo
 
       ~ {i: `did ${todo} ${todo.repeated} time(s)`}
       }
