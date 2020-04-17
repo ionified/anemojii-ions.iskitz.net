@@ -5,9 +5,11 @@
     , is: "animated emoji ions"
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
-    , to: -7.20190413
+    , to: -7.20200417
     , at: 15.2
-    }
+    , it: "it explores ionified literate programming while randomly displaying "
+        + "valid emoji face lions: literal ions: invoked object notations."
+}
 
 , do:
     [ "request emoji"
@@ -30,6 +32,14 @@
         }
       }
 
+, gotEmoji
+:   function gotEmoji ()
+      { var anemojii       = gotEmoji.with
+      ;     anemojii.emoji = this
+      ~ {i:`got emoji from: ${this.re.id} & will ${anemojii.do}`}
+      ~     anemojii.do
+      }
+
 ,"await emoji"
 :   function awaitEmoji ()
       { var anemojii         = awaitEmoji.with
@@ -38,14 +48,6 @@
           ; anemojii.do.with = anemojii
           ; doing.length     = 2
       ~ {i:`set do to ${anemojii.do}`}
-      }
-
-, gotEmoji
-:   function gotEmoji ()
-      { var anemojii       = gotEmoji.with
-      ;     anemojii.emoji = this
-      ~ {i:`got emoji from: ${this.re.id} & will ${anemojii.do}`}
-      ~     anemojii.do
       }
 
 , "choose emoji"
