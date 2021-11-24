@@ -5,11 +5,19 @@
     , is: "animated emoji ions"
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
-    , to: -8.20210217
-    , at: 15.5
-    , it: "explores ionified literate programming while randomly displaying    "
-        + "valid emoji face lions: literal ions: invoked object notations.     "
-        + "Learn more about ions, ionify & ionified @ https://why.ionify.net/  "
+    , to: -8.20211124
+    , at: 15.6
+    , is:
+        [ "exploring ionified literate programming while randomly displaying"
+        + "valid emoji face lions, literal ions, invoked object notations 🤓"
+        ],
+      go:
+        { more: 'https://why.ionify.net/'
+        },
+      we:
+        [ "hope you'll learn more about ions, ionify & ionified with this!"
+        , "like renaming this anemoji for simpler reading & pronounciation"
+        ]
     },
 
   do:
