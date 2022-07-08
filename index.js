@@ -5,14 +5,14 @@
     , is: "animated emoji ions"
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
-    , to: -8.20211124
-    , at: 15.6
+    , to: -7.20220708
+    , at: 16.0
     , is:
         [ "exploring ionified literate programming while randomly displaying"
-        + "valid emoji face lions, literal ions, invoked object notations 🤓"
+        + "valid emoji face lions: literal ions: invoked object notations 🤓"
         ],
       go:
-        { more: 'https://why.ionify.net/'
+        { seek: 'https://why.ionify.net/'
         },
       we:
         [ "hope you'll learn more about ions, ionify & ionified with this!"
@@ -42,51 +42,51 @@
       { ~
         { on:'anemojii.emoji@ions.iskitz.net'
             ,'anemojii.emoji@ions.iskitz.net'
-            : awaitEmoji.with.gotEmoji
+            : awaitEmoji.with.its.gotEmoji
         }
 
-        var anemojii         = awaitEmoji.with
+        var anemojii         = awaitEmoji.with.its
           , doing            = anemojii.do
           ; anemojii.do      = doing.slice (2)
-          ; anemojii.do.with = anemojii
+          ; anemojii.do.with = doing.with
           ; doing.length     = 2
 
-        ~ {i:`set do to ${anemojii.do}`}
+        ~ {I:` set do to ${anemojii.do}`}
       },
 
   gotEmoji:
     function gotEmoji ()
-      { var anemojii       = gotEmoji.with
+      { var anemojii       = gotEmoji.with.its
           ; anemojii.emoji = this
 
-      ~ {i:`got emoji from: ${this.re.id} & will ${anemojii.do}`}
+      ~ {I:` got emoji from: ${this.re.id} & will ${anemojii.do}`}
       ~ anemojii.do
       },
 
   "choose emoji":
     function chooseEmoji ()
-      { var emoji      = chooseEmoji.with.emoji
+      { var emoji      = chooseEmoji.with.its.emoji
           ; emoji.next = emoji.new()
 
-      ~ {i:`chose ${emoji.next}`}
+      ~ {I:` chose ${emoji.next}`}
       },
 
   "show emoji":
     function showEmoji ()
-      { document.title = document.body.innerHTML = showEmoji.with.emoji.next
+      { document.title = document.body.innerHTML = showEmoji.with.its.emoji.next
       },
 
   "wait .25 --> 1 second":
     function wait ()
-      { wait.with.do.after = Math.random * 750 + 250 | 0
-      ~ {i:`will wait ${wait.with.do.after} ms before showing the next emoji`}
+      { wait.with.its.do.after = Math.random * 750 + 250 | 0
+      ~ {I:`'ll wait ${wait.with.its.do.after} ms before showing the next emoji`}
       },
 
   "repeat 20151021 times":
     function repeat ()
       { clearTimeout (repeat.last)
 
-        var   todo   =  repeat.with.do
+        var   todo   =  repeat.with.its.do
         if (  todo   .  repeated > 20151021) return
 
         repeat.last  = setTimeout (repeat, todo.after)
@@ -94,7 +94,7 @@
             ! todo   . repeated   &&  todo.pop () && (todo.repeated = 0)
               todo   . repeated++ && ~todo
 
-      ~ {i: `did ${todo} ${todo.repeated} time(s)`}
+      ~ {i:` did ${todo} ${todo.repeated} time(s)`}
       }
 }
 ;

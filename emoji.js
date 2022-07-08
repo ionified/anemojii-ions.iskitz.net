@@ -2,23 +2,23 @@
 ~
 { re:
     { id: 'anemojii.emoji@ions.iskitz.net'
-    , is: "anemojii's emoji"
     , by: 'mike.lee@iskitz'
     , on: -7.20151021
-    , to: -8.20211124
-    , at: +3.0
+    , to: -7.20220708
+    , at: +4.0
     , is:
-        [ "creating a random ion, aesop | storie type emoji on each request"
+        [ "anemojii's emoji"
+        , "creating a random ion, aesop | storie type emoji on each request"
         ],
       we:
-        [ "know there's an ionify 🐛 where ion members named next have no .with"
+        [ "know there was a challenge with ion members named next lacking .with"
         , "like emoji parts in their own ion separate from their construction"
         ]
     },
 
   new:
     function next ()
-      { var emoji = next.with
+      { var emoji = next.with.its
           , types = emoji.types
           , type  = types [Math.random * types.length | 0]
           ; return emoji.create (emoji [type])
@@ -30,7 +30,7 @@
 
   create:
     function create (compose)
-      { var emoji = create.with
+      { var emoji = create.with.its
           , get   = emoji.choose
           , eyes  = emoji.eyes
           , eye   = Math.random * eyes.length | 0
