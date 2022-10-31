@@ -2,13 +2,13 @@
 ~
 { re:
     { id: 'anemojii@ions.iskitz.net'
-    , is: "animated emoji ions"
-    , by: 'mike.lee@iskitz'
+    , by: 'mike.👨🏾‍💻.lee@iskitz'
     , on: -7.20151021
-    , to: -7.20220708
-    , at: 16.0
+    , to: -7.20221031
+    , at: 16.01
     , is:
-        [ "exploring ionified literate programming while randomly displaying"
+        [ "animated emoji ions"
+        , "exploring ionified literate programming while randomly displaying"
         + "valid emoji face lions: literal ions: invoked object notations 🤓"
         ],
       go:
