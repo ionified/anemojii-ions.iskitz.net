@@ -5,6 +5,6 @@
 , info  : !true
 , log   : !true
 , warn  :  true
-, get   : ['i@ionify', 'index']
+, get   : ['narrator@ionify', 'index']
 }
 ;
