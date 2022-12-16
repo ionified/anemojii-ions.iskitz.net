@@ -2,10 +2,11 @@
 ~
 { re:
     { id: 'anemojii@ions.iskitz.net'
-    , by: 'mike.👨🏾‍💻.lee@iskitz'
-    , on: -7.20151021
-    , to: -7.20221031
-    , at: 16.01
+    , do: {emoji:true, 'narrator@ionify':true}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@iskitz']
+    , on:  -27.20151021
+    , to:  -18.578309111
+    , at:   17.10
     , is:
         [ "animated emoji ions"
         , "exploring ionified literate programming while randomly displaying"
@@ -21,8 +22,7 @@
     },
 
   do:
-    [ "request emoji"
-    ,   "await emoji"
+    [   "await emoji"
     ,  "choose emoji"
     ,    "show emoji"
     , "wait .25 --> 1 second"
@@ -31,10 +31,6 @@
 
   emoji
     : null
-    ,
-
- "request emoji"
-    : {get:'emoji'}
     ,
 
  "await emoji":
@@ -47,9 +43,9 @@
 
         var anemojii         = awaitEmoji.with.its
           , doing            = anemojii.do
-          ; anemojii.do      = doing.slice (2)
+          ; anemojii.do      = doing.slice (1)
           ; anemojii.do.with = doing.with
-          ; doing.length     = 2
+          ; doing.length     = 1
 
         ~ {I:` set do to ${anemojii.do}`}
       },

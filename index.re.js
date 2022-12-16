@@ -2,25 +2,20 @@
 ~
 { re:
     { id: 'anemojii.re@ions.iskitz.net'
-    , by: 'mike.lee@iskitz'
-    , on: -7.20151021
-    , to: -8.20210217
-    , at: 15.0
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@iskitz']
+    , on: -27.20151021
+    , to: -18.20221205
+    , at:  16.1
     , is: "an exploration of animated emoji ions & ionified literate programming"
     },
 
   do:
-    [ "request emoji"
-    , "await emoji"
+    [ "await emoji"
     , "choose emoji"
     , "show emoji"
     , "wait .25 --> 1 second"
     , "repeat 20151021 times"
     ],
-
-  "request emoji":
-    {I:" request anemoji's emoji ion."}
-    ,
 
   "await emoji":
     {I
