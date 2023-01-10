@@ -3,36 +3,24 @@
 { re:
     { id: 'anemojii.re@ions.iskitz.net'
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@iskitz']
-    , on: -27.20151021
-    , to: -18.20221205
-    , at:  16.1
+    , on: - 2.20151021407
+    , to: - 1.57831003308
+    , at: +18.000
     , is: "an exploration of animated emoji ions & ionified literate programming"
     },
 
   do:
-    [ "await emoji"
-    , "choose emoji"
+    [ "choose emoji"
     , "show emoji"
     , "wait .25 --> 1 second"
     , "repeat 20151021 times"
     ],
 
-  "await emoji":
-    {I
-    :" pause actions until emoji arrive by updating the do actions list to only"
-    +" contain pending actions & by removing them from the active do actions"
-    +" list before they're activated. Next, I add a sensor to observe when"
-    +" emoji arrive. Once they arrive, I keep them in a shared emoji list to"
-    +" simplify accessing them from anemojii's other actions. Finally, I resume"
-    +" previously paused do actions by activating the updated do actions list of"
-    +" pending actions."
-    },
-
   "choose emoji":
     {I
-    :" choose an emoji by requesting it from anemoji's emoji ion. I then save the"
-    +" chosen emoji as a property on the emoji list to simplify accessing it from"
-    +" other actions."
+    :" choose an emoji by requesting it from anemoji's association@-shared"
+    +" emoji ion. I then save the chosen emoji as a property on the emoji ion"
+    +" to simplify accessing it via the 'show emoji' aesop action."
     },
 
   "show emoji":
