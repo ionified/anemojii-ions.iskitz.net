@@ -4,9 +4,9 @@
     { id: 'anemojii@ions.iskitz.net'
     , do: {emoji:true, 'narrator@ionify':true}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@iskitz']
-    , on:  -27.20151021
-    , to:  -18.578309111
-    , at:   17.10
+    , on:  - 2.20151021407
+    , to:  - 1.57831003308
+    , at:  +18.000
     , is:
         [ "animated emoji ions"
         , "exploring ionified literate programming while randomly displaying"
@@ -22,46 +22,15 @@
     },
 
   do:
-    [   "await emoji"
-    ,  "choose emoji"
+    [  "choose emoji"
     ,    "show emoji"
     , "wait .25 --> 1 second"
     , "repeat 20151021 times"
     ],
 
-  emoji
-    : null
-    ,
-
- "await emoji":
-    function awaitEmoji ()
-      { ~
-        { on:'anemojii.emoji@ions.iskitz.net'
-            ,'anemojii.emoji@ions.iskitz.net'
-            : awaitEmoji.with.its.gotEmoji
-        }
-
-        var anemojii         = awaitEmoji.with.its
-          , doing            = anemojii.do
-          ; anemojii.do      = doing.slice (1)
-          ; anemojii.do.with = doing.with
-          ; doing.length     = 1
-
-        ~ {I:` set do to ${anemojii.do}`}
-      },
-
-  gotEmoji:
-    function gotEmoji ()
-      { var anemojii       = gotEmoji.with.its
-          ; anemojii.emoji = this
-
-      ~ {I:` got emoji from: ${this.re.id} & will ${anemojii.do}`}
-      ~ anemojii.do
-      },
-
   "choose emoji":
     function chooseEmoji ()
-      { var emoji      = chooseEmoji.with.its.emoji
+      { var emoji      = chooseEmoji.with.our.emoji
           ; emoji.next = emoji.new()
 
       ~ {I:` chose ${emoji.next}`}
@@ -69,7 +38,7 @@
 
   "show emoji":
     function showEmoji ()
-      { document.title = document.body.innerHTML = showEmoji.with.its.emoji.next
+      { document.title = document.body.innerHTML = showEmoji.with.our.emoji.next
       },
 
   "wait .25 --> 1 second":

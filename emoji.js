@@ -2,19 +2,32 @@
 ~
 { re:
     { id: 'anemojii.emoji@ions.iskitz.net'
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee@iskitz']
-    , as: {emoji:-0.001}
-    , on: -27.201510214
-    , to: -18.578309226
-    , at: + 5.21
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee']
+    , on: -2.20151021407
+    , to: -1.57831003308
+    , at: +6.000
     , is:
         [ "anemojii's emoji"
         , "creating a random ion, aesop | storie type emoji on each request"
         ],
       we:
-        [ "know there was a challenge with ion members named next lacking .with"
+        [ "will remove our hip-hop invocation once with@ auto-resolves names"
+        , "know there was a challenge with ion members named next lacking .with"
         , "like emoji parts in their own ion separate from their construction"
         ]
+    },
+
+  with:
+    { our:
+        { emoji:'my@'
+        }
+    },
+
+  valueOf:function
+  ionify ()
+    { var emoji = this
+      emoji.with.our.emoji  = emoji
+      delete emoji.valueOf <= emoji
     },
 
   new:
