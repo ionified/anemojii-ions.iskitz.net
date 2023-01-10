@@ -5,8 +5,8 @@
     , do: {emoji:true, 'narrator@ionify':true}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@iskitz']
     , on:  - 2.20151021407
-    , to:  - 1.57831003308
-    , at:  +18.000
+    , to:  - 1.57831016208
+    , at:  +18.001
     , is:
         [ "animated emoji ions"
         , "exploring ionified literate programming while randomly displaying"
@@ -42,16 +42,16 @@
       },
 
   "wait .25 --> 1 second":
-    function wait ()
-      { wait.with.its.do.after = Math.random * 750 + 250 | 0
-      ~ {I:`'ll wait ${wait.with.its.do.after} ms before showing the next emoji`}
+    function wait (doing)
+      { doing.after = Math.random * 750 + 250 | 0
+      ~ {I:`'ll wait ${doing.after} ms before showing the next emoji`}
       },
 
   "repeat 20151021 times":
     function repeat ()
       { clearTimeout (repeat.last)
 
-        var   todo   =  repeat.with.its.do
+        var   todo   =  repeat.with.my.do
         if (  todo   .  repeated > 20151021) return
 
         repeat.last  = setTimeout (repeat, todo.after)
