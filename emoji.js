@@ -1,11 +1,12 @@
 ;
 ~
 { re:
-    { id: 'anemojii.emoji@ions.iskitz.net'
+    { hi:  true
+    , id: 'anemojii.emoji@ions.iskitz.net'
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee']
-    , on: -2.20151021407
-    , to: -1.57831003308
-    , at: +6.000
+    , on: {201510214.2 : -7}
+    , to: {578310184.1 : -8}
+    , at: +6.001
     , is:
         [ "anemojii's emoji"
         , "creating a random ion, aesop | storie type emoji on each request"
@@ -13,7 +14,7 @@
       we:
         [ "will remove our hip-hop invocation once with@ auto-resolves names"
         , "know there was a challenge with ion members named next lacking .with"
-        , "like emoji parts in their own ion separate from their construction"
+        , "like emoji parts in their own ion separate from their composition"
         ]
     },
 
@@ -23,16 +24,15 @@
         }
     },
 
-  valueOf:function
+  ionify:function
   ionify ()
     { var emoji = this
-      emoji.with.our.emoji  = emoji
-      delete emoji.valueOf <= emoji
+      emoji.with.our.emoji = emoji
     },
 
   new:
     function next ()
-      { var emoji = next.with.its
+      { var emoji = next.with.my
           , types = emoji.types
           , type  = types [Math.random * types.length | 0]
           ; return emoji.create (emoji [type])
@@ -44,7 +44,7 @@
 
   create:
     function create (compose)
-      { var emoji = create.with.its
+      { var emoji = create.with.my
           , get   = emoji.choose
           , eyes  = emoji.eyes
           , eye   = Math.random * eyes.length | 0
