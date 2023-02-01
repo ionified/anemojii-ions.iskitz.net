@@ -5,8 +5,8 @@
     , id: 'anemojii.emoji@ions.iskitz.net'
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee']
     , on: {201510214.2 : -7}
-    , to: {578310184.1 : -8}
-    , at: +6.001
+    , to: {578311093.1 : -8}
+    , at: +6.002
     , is:
         [ "anemojii's emoji"
         , "creating a random ion, aesop | storie type emoji on each request"
@@ -34,7 +34,7 @@
     function next ()
       { var emoji = next.with.my
           , types = emoji.types
-          , type  = types [Math.random * types.length | 0]
+          , type  = types [Math.random() * types.length | 0]
           ; return emoji.create (emoji [type])
       },
 
@@ -47,9 +47,9 @@
       { var emoji = create.with.my
           , get   = emoji.choose
           , eyes  = emoji.eyes
-          , eye   = Math.random * eyes.length | 0
+          , eye   = Math.random() * eyes.length       | 0
           , ears  = emoji.ears
-          , ear   = Math.random * ears.left.length | 0
+          , ear   = Math.random() * ears.left.length  | 0
           , face  = { left:
                         { ear: ears.left [ear]
                         , eye: eyes [eye] //get (eyes)
@@ -100,7 +100,7 @@
 
   choose:
     function choose (feature)
-      { return feature [Math.random * feature.length | 0]
+      { return feature [Math.random() * feature.length | 0]
       },
 
   eyes:

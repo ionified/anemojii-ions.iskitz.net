@@ -4,9 +4,9 @@
     { id: 'anemojii@ions.iskitz.net'
     , do: {emoji:true, 'narrator@ionify':true}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@iskitz']
-    , on:  - 2.20151021407
-    , to:  - 1.57831016208
-    , at:  +18.001
+    , on: {201510214.2 : -7}
+    , to: {578311093.1 : -8}
+    , at: +18.002
     , is:
         [ "animated emoji ions"
         , "exploring ionified literate programming while randomly displaying"
@@ -43,7 +43,7 @@
 
   "wait .25 --> 1 second":
     function wait (doing)
-      { doing.after = Math.random * 750 + 250 | 0
+      { doing.after = Math.random() * 750 + 250 | 0
       ~ {I:`'ll wait ${doing.after} ms before showing the next emoji`}
       },
 
